@@ -13,7 +13,7 @@ struct MainTabView: View {
     var body: some View {
         VStack {
             TabView(selection: $selection) {
-                Text("Home")
+                FeedView()
                     .tabItem {
                         if selection == 0 {
                             Image(systemName: "house.fill")

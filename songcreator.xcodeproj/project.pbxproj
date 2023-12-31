@@ -15,6 +15,8 @@
 		8DACAD482B41CE520005112D /* songcreatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACAD472B41CE520005112D /* songcreatorUITestsLaunchTests.swift */; };
 		8DACAD552B41D3CE0005112D /* songcreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACAD3B2B41CE520005112D /* songcreatorTests.swift */; };
 		8DACAD592B41D85A0005112D /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACAD582B41D85A0005112D /* MainTabView.swift */; };
+		8DACAD5C2B41DD6D0005112D /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACAD5B2B41DD6D0005112D /* FeedCell.swift */; };
+		8DACAD5E2B41DD9F0005112D /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACAD5D2B41DD9F0005112D /* FeedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		8DACAD452B41CE520005112D /* songcreatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = songcreatorUITests.swift; sourceTree = "<group>"; };
 		8DACAD472B41CE520005112D /* songcreatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = songcreatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8DACAD582B41D85A0005112D /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		8DACAD5B2B41DD6D0005112D /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		8DACAD5D2B41DD9F0005112D /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 		8DACAD1E2B41CE510005112D = {
 			isa = PBXGroup;
 			children = (
+				8DACAD5A2B41DD440005112D /* Feed */,
 				8DACAD572B41D43D0005112D /* Models */,
 				8DACAD562B41D4250005112D /* View Models */,
 				8DACAD542B41D38F0005112D /* Views */,
@@ -152,6 +157,15 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8DACAD5A2B41DD440005112D /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				8DACAD5B2B41DD6D0005112D /* FeedCell.swift */,
+				8DACAD5D2B41DD9F0005112D /* FeedView.swift */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +298,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DACAD5E2B41DD9F0005112D /* FeedView.swift in Sources */,
 				8DACAD2D2B41CE510005112D /* ContentView.swift in Sources */,
+				8DACAD5C2B41DD6D0005112D /* FeedCell.swift in Sources */,
 				8DACAD2B2B41CE510005112D /* songcreatorApp.swift in Sources */,
 				8DACAD592B41D85A0005112D /* MainTabView.swift in Sources */,
 			);

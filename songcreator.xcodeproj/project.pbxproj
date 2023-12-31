@@ -11,9 +11,9 @@
 		8DACAD2D2B41CE510005112D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACAD2C2B41CE510005112D /* ContentView.swift */; };
 		8DACAD2F2B41CE520005112D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DACAD2E2B41CE520005112D /* Assets.xcassets */; };
 		8DACAD322B41CE520005112D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DACAD312B41CE520005112D /* Preview Assets.xcassets */; };
-		8DACAD3C2B41CE520005112D /* songcreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACAD3B2B41CE520005112D /* songcreatorTests.swift */; };
 		8DACAD462B41CE520005112D /* songcreatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACAD452B41CE520005112D /* songcreatorUITests.swift */; };
 		8DACAD482B41CE520005112D /* songcreatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACAD472B41CE520005112D /* songcreatorUITestsLaunchTests.swift */; };
+		8DACAD552B41D3CE0005112D /* songcreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACAD3B2B41CE520005112D /* songcreatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +74,9 @@
 		8DACAD1E2B41CE510005112D = {
 			isa = PBXGroup;
 			children = (
+				8DACAD572B41D43D0005112D /* Models */,
+				8DACAD562B41D4250005112D /* View Models */,
+				8DACAD542B41D38F0005112D /* Views */,
 				8DACAD292B41CE510005112D /* songcreator */,
 				8DACAD3A2B41CE520005112D /* songcreatorTests */,
 				8DACAD442B41CE520005112D /* songcreatorUITests */,
@@ -95,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				8DACAD2A2B41CE510005112D /* songcreatorApp.swift */,
-				8DACAD2C2B41CE510005112D /* ContentView.swift */,
 				8DACAD2E2B41CE520005112D /* Assets.xcassets */,
 				8DACAD302B41CE520005112D /* Preview Content */,
 			);
@@ -125,6 +127,28 @@
 				8DACAD472B41CE520005112D /* songcreatorUITestsLaunchTests.swift */,
 			);
 			path = songcreatorUITests;
+			sourceTree = "<group>";
+		};
+		8DACAD542B41D38F0005112D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8DACAD2C2B41CE510005112D /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8DACAD562B41D4250005112D /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		8DACAD572B41D43D0005112D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +290,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DACAD3C2B41CE520005112D /* songcreatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +299,7 @@
 			files = (
 				8DACAD482B41CE520005112D /* songcreatorUITestsLaunchTests.swift in Sources */,
 				8DACAD462B41CE520005112D /* songcreatorUITests.swift in Sources */,
+				8DACAD552B41D3CE0005112D /* songcreatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

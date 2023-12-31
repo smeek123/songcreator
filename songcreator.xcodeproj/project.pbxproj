@@ -14,6 +14,7 @@
 		8DACAD462B41CE520005112D /* songcreatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACAD452B41CE520005112D /* songcreatorUITests.swift */; };
 		8DACAD482B41CE520005112D /* songcreatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACAD472B41CE520005112D /* songcreatorUITestsLaunchTests.swift */; };
 		8DACAD552B41D3CE0005112D /* songcreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACAD3B2B41CE520005112D /* songcreatorTests.swift */; };
+		8DACAD592B41D85A0005112D /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACAD582B41D85A0005112D /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		8DACAD412B41CE520005112D /* songcreatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = songcreatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DACAD452B41CE520005112D /* songcreatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = songcreatorUITests.swift; sourceTree = "<group>"; };
 		8DACAD472B41CE520005112D /* songcreatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = songcreatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8DACAD582B41D85A0005112D /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				8DACAD2C2B41CE510005112D /* ContentView.swift */,
+				8DACAD582B41D85A0005112D /* MainTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			files = (
 				8DACAD2D2B41CE510005112D /* ContentView.swift in Sources */,
 				8DACAD2B2B41CE510005112D /* songcreatorApp.swift in Sources */,
+				8DACAD592B41D85A0005112D /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

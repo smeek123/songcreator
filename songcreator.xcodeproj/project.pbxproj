@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D48DD3F2B4312BC000A38C8 /* CurrentProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48DD3E2B4312BC000A38C8 /* CurrentProfileView.swift */; };
+		8D48DD412B43145F000A38C8 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48DD402B43145F000A38C8 /* ProfileHeaderView.swift */; };
+		8D48DD432B431474000A38C8 /* PostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48DD422B431474000A38C8 /* PostGridView.swift */; };
+		8D48DD452B4316F2000A38C8 /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48DD442B4316F2000A38C8 /* UserStatView.swift */; };
 		8DACAD2B2B41CE510005112D /* songcreatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACAD2A2B41CE510005112D /* songcreatorApp.swift */; };
 		8DACAD2D2B41CE510005112D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DACAD2C2B41CE510005112D /* ContentView.swift */; };
 		8DACAD2F2B41CE520005112D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DACAD2E2B41CE520005112D /* Assets.xcassets */; };
@@ -37,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D48DD3E2B4312BC000A38C8 /* CurrentProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentProfileView.swift; sourceTree = "<group>"; };
+		8D48DD402B43145F000A38C8 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		8D48DD422B431474000A38C8 /* PostGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridView.swift; sourceTree = "<group>"; };
+		8D48DD442B4316F2000A38C8 /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
 		8DACAD272B41CE510005112D /* songcreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = songcreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DACAD2A2B41CE510005112D /* songcreatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = songcreatorApp.swift; sourceTree = "<group>"; };
 		8DACAD2C2B41CE510005112D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,9 +85,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D48DD3D2B4312AA000A38C8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8D48DD3E2B4312BC000A38C8 /* CurrentProfileView.swift */,
+				8D48DD402B43145F000A38C8 /* ProfileHeaderView.swift */,
+				8D48DD442B4316F2000A38C8 /* UserStatView.swift */,
+				8D48DD422B431474000A38C8 /* PostGridView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		8DACAD1E2B41CE510005112D = {
 			isa = PBXGroup;
 			children = (
+				8D48DD3D2B4312AA000A38C8 /* Profile */,
 				8DACAD5A2B41DD440005112D /* Feed */,
 				8DACAD572B41D43D0005112D /* Models */,
 				8DACAD562B41D4250005112D /* View Models */,
@@ -300,7 +320,11 @@
 			files = (
 				8DACAD5E2B41DD9F0005112D /* FeedView.swift in Sources */,
 				8DACAD2D2B41CE510005112D /* ContentView.swift in Sources */,
+				8D48DD452B4316F2000A38C8 /* UserStatView.swift in Sources */,
+				8D48DD3F2B4312BC000A38C8 /* CurrentProfileView.swift in Sources */,
 				8DACAD5C2B41DD6D0005112D /* FeedCell.swift in Sources */,
+				8D48DD432B431474000A38C8 /* PostGridView.swift in Sources */,
+				8D48DD412B43145F000A38C8 /* ProfileHeaderView.swift in Sources */,
 				8DACAD2B2B41CE510005112D /* songcreatorApp.swift in Sources */,
 				8DACAD592B41D85A0005112D /* MainTabView.swift in Sources */,
 			);

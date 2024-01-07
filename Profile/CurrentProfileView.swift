@@ -7,24 +7,25 @@
 
 import SwiftUI
 
-struct CurrentProfileView: View {
+struct CurrentProfileView: View {    
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack {
                     ProfileHeaderView()
                     
-                    Button {
-                        
+                    NavigationLink {
+                        Text("Customize")
                     } label: {
                         Text("Edit Profile")
-                            .foregroundStyle(.white)
-                            .font(.subheadline)
                             .fontWeight(.semibold)
-                            .frame(width: 360, height: 32)
-                            .background (Color(.systemGray3))
-                            .clipShape(RoundedRectangle(cornerRadius: 6))
+                            .frame(width: UIScreen.main.bounds.width * 0.85, height: 32)
                     }
+                    .buttonStyle(.bordered)
+                    .padding(.top, 5)
+
+                    PostGridView()
+                        .padding(.vertical)
                 }
                 .padding(.top)
             }

@@ -11,10 +11,7 @@ struct ProfileHeaderView: View {
     var body: some View {
         VStack(spacing: 16) {
             VStack(spacing: 8) {
-                Image(systemName: "person.circle.fill")
-                    .resizable()
-                    .frame(width: 80, height: 80)
-                    .foregroundStyle(Color(.systemGray3))
+                ProfileImageView(size: .large)
                 
                 Text("sean.meek06")
                     .font(.subheadline)

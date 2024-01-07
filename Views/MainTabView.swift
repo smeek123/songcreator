@@ -23,12 +23,12 @@ struct MainTabView: View {
                         }
                     }.tag(0)
                 
-                Text("Favorites")
+                Text("Messages")
                     .tabItem {
                         if selection == 1 {
-                            Image(systemName: "star.fill")
+                            Image(systemName: "message.fill")
                         } else {
-                            Image(systemName: "star")
+                            Image(systemName: "message")
                                 .environment(\.symbolVariants, .none)
                         }
                     }.tag(1)
@@ -38,7 +38,7 @@ struct MainTabView: View {
                         Image(systemName: "plus.rectangle.fill")
                     }.tag(2)
                 
-                Text("Notifications")
+                NotificationsView()
                     .tabItem {
                         if selection == 3 {
                             Image(systemName: "bell.fill")

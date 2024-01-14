@@ -39,6 +39,10 @@ struct FeedCell: View {
                     VStack(spacing: 28) {
                         ProfileImageView(size: .xSmall)
                             .padding(.vertical, 0)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(.purple, lineWidth: 2)
+                            }
                         
                         Button {
                             
@@ -87,12 +91,6 @@ struct FeedCell: View {
                 .padding(.bottom, 80)
             }
             .padding()
-            
-            Button {
-                
-            } label: {
-                Image(systemName: "bookmark. fill")
-            }
         }
     }
 }

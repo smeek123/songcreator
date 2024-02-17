@@ -10,47 +10,50 @@ import SwiftUI
 struct FeedView: View {
     @State private var selection: Int = 0
     @Namespace private var pickerTabs
+    @StateObject var viewModel = FeedViewModel()
     
     var body: some View {
-        ScrollView {
-            LazyVStack(spacing: 0) {
-                ForEach(0..<10) { post in
-                    FeedCell(post: post)
+        NavigationStack {
+            ScrollView {
+                LazyVStack(spacing: 0) {
+                    ForEach(viewModel.posts) { post in
+                        FeedCell(post: post)
+                    }
                 }
+                .scrollTargetLayout()
             }
-            .scrollTargetLayout()
-        }
-        .scrollTargetBehavior(.paging)
-        .ignoresSafeArea()
-        .overlay {
-            VStack {
-                HStack(alignment: .center, spacing: 18) {
-                    Button {
-                        withAnimation(.linear) {
-                            selection = 1
+            .scrollTargetBehavior(.paging)
+            .ignoresSafeArea()
+            .overlay {
+                VStack {
+                    HStack(alignment: .center, spacing: 18) {
+                        Button {
+                            withAnimation(.linear) {
+                                selection = 1
+                            }
+                        } label: {
+                            Text("Songs")
+                                .font(.system(size: 18))
+                                .fontWeight(selection == 1 ? .bold : .semibold)
+                                .foregroundStyle(selection == 1 ? .purple : .white)
                         }
-                    } label: {
-                        Text("Songs")
-                            .font(.system(size: 18))
-                            .fontWeight(selection == 1 ? .bold : .semibold)
-                            .foregroundStyle(selection == 1 ? .purple : .white)
+                        
+                        Button {
+                            withAnimation(.linear) {
+                                selection = 0
+                            }
+                        } label: {
+                            Text("Demos")
+                                .font(.system(size: 18))
+                                .fontWeight(selection == 0 ? .bold : .semibold)
+                                .foregroundStyle(selection == 0 ? .purple : .white)
+                        }
                     }
+                    .frame(width: UIScreen.main.bounds.width, height: 35, alignment: .top)
+                    .background(Color(.black).opacity(0.15))
                     
-                    Button {
-                        withAnimation(.linear) {
-                            selection = 0
-                        }
-                    } label: {
-                        Text("Demos")
-                            .font(.system(size: 18))
-                            .fontWeight(selection == 0 ? .bold : .semibold)
-                            .foregroundStyle(selection == 0 ? .purple : .white)
-                    }
+                    Spacer()
                 }
-                .frame(width: UIScreen.main.bounds.width, height: 35, alignment: .top)
-                .background(Color(.black).opacity(0.15))
-                
-                Spacer()
             }
         }
     }

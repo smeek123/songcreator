@@ -10,6 +10,9 @@
 		8D0F8DB82B810B370037416A /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F8DB72B810B370037416A /* MessageListView.swift */; };
 		8D0F8DBA2B810B480037416A /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F8DB92B810B480037416A /* ConversationView.swift */; };
 		8D0F8DBC2B810BA10037416A /* MessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F8DBB2B810BA10037416A /* MessageCellView.swift */; };
+		8D1152FE2B815849002ADBD6 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1152FD2B815849002ADBD6 /* PostModel.swift */; };
+		8D1153002B8158B3002ADBD6 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1152FF2B8158B3002ADBD6 /* FeedViewModel.swift */; };
+		8D1153022B815ED5002ADBD6 /* CustomVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1153012B815ED5002ADBD6 /* CustomVideoPlayer.swift */; };
 		8D48DD3F2B4312BC000A38C8 /* CurrentProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48DD3E2B4312BC000A38C8 /* CurrentProfileView.swift */; };
 		8D48DD412B43145F000A38C8 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48DD402B43145F000A38C8 /* ProfileHeaderView.swift */; };
 		8D48DD432B431474000A38C8 /* PostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48DD422B431474000A38C8 /* PostGridView.swift */; };
@@ -50,6 +53,9 @@
 		8D0F8DB72B810B370037416A /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
 		8D0F8DB92B810B480037416A /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
 		8D0F8DBB2B810BA10037416A /* MessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellView.swift; sourceTree = "<group>"; };
+		8D1152FD2B815849002ADBD6 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostModel.swift; path = Messages/PostModel.swift; sourceTree = SOURCE_ROOT; };
+		8D1152FF2B8158B3002ADBD6 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		8D1153012B815ED5002ADBD6 /* CustomVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayer.swift; sourceTree = "<group>"; };
 		8D48DD3E2B4312BC000A38C8 /* CurrentProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentProfileView.swift; sourceTree = "<group>"; };
 		8D48DD402B43145F000A38C8 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		8D48DD422B431474000A38C8 /* PostGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridView.swift; sourceTree = "<group>"; };
@@ -209,6 +215,7 @@
 		8DACAD572B41D43D0005112D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8D1152FD2B815849002ADBD6 /* PostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -218,6 +225,8 @@
 			children = (
 				8DACAD5B2B41DD6D0005112D /* FeedCell.swift */,
 				8DACAD5D2B41DD9F0005112D /* FeedView.swift */,
+				8D1152FF2B8158B3002ADBD6 /* FeedViewModel.swift */,
+				8D1153012B815ED5002ADBD6 /* CustomVideoPlayer.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -353,6 +362,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DACAD5E2B41DD9F0005112D /* FeedView.swift in Sources */,
+				8D1153002B8158B3002ADBD6 /* FeedViewModel.swift in Sources */,
+				8D1152FE2B815849002ADBD6 /* PostModel.swift in Sources */,
 				8DACAD2D2B41CE510005112D /* ContentView.swift in Sources */,
 				8D8711DD2B4B14AD0088454F /* ProfileImageView.swift in Sources */,
 				8D58E21C2B4B4C1900BD82CD /* NotificationsView.swift in Sources */,
@@ -367,6 +378,7 @@
 				8D0F8DB82B810B370037416A /* MessageListView.swift in Sources */,
 				8DACAD2B2B41CE510005112D /* songcreatorApp.swift in Sources */,
 				8DACAD592B41D85A0005112D /* MainTabView.swift in Sources */,
+				8D1153022B815ED5002ADBD6 /* CustomVideoPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

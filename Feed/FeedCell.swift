@@ -6,20 +6,25 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct FeedCell: View {
-    let post: Int
+    let post: Post
+    var player: AVPlayer
+    
+    init(post: Post) {
+        self.post = post
+        if let url = URL(string: post.videoUrl) {
+            self.player = AVPlayer(url: url)
+        }
+    }
     
     var body: some View {
         ZStack {
-            Rectangle()
-                .fill(.green)
-                .containerRelativeFrame([.horizontal, .vertical])
-                .overlay {
-                    Text("Post \(post)")
-                        .foregroundStyle(.white)
-                        .font(.largeTitle)
-                }
+            if let url = URL(string: post.videoUrl) {
+                CustomVideoPlayer(player: AVPlayer(url: url))
+                    .containerRelativeFrame([.horizontal, .vertical])
+            }
             
             VStack {
                 Spacer()
@@ -59,14 +64,14 @@ struct FeedCell: View {
                             .foregroundStyle(.white)
                         }
                         
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "message.fill")
-                                .resizable()
-                                .frame(width: 28, height: 28)
-                                .foregroundStyle(.white)
-                        }
+                        NavigationLink(
+                            destination: ConversationView().navigationBarBackButtonHidden(),
+                            label: {
+                                Image(systemName: "message.fill")
+                                    .resizable()
+                                    .frame(width: 28, height: 28)
+                                    .foregroundStyle(.white)
+                            })
                         
                         Button {
                             
@@ -95,6 +100,6 @@ struct FeedCell: View {
     }
 }
 
-#Preview {
-    FeedCell(post: 5)
-}
+//#Preview {
+//    FeedCell(post: Post(id: NSUUID().uuidString, videoUrl: ""))
+//}

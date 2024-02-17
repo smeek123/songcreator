@@ -39,7 +39,7 @@ struct MessageListView: View {
             }
             .padding(.top, 5)
             .listStyle(.plain)
-            .navigationTitle("Notifications")
+            .navigationTitle("Messages")
             .navigationBarTitleDisplayMode(.inline)
         }
     }

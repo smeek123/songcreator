@@ -8,8 +8,67 @@
 import SwiftUI
 
 struct ConversationView: View {
+    @Environment(\.dismiss) var dismiss
+    @State private var messageText: String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                ScrollView {
+                    VStack {
+                        ProfileImageView(size: .xLarge)
+                        
+                        VStack(spacing: 4) {
+                            Text("username")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                            
+                            Text("Message")
+                                .font(.footnote)
+                                .foregroundStyle(.purple)
+                        }
+                    }
+                }
+                
+                TextField("Message...", text: $messageText, axis: .vertical)
+                    .padding(12)
+                    .padding(.trailing, 48)
+                    .textFieldStyle(.roundedBorder)
+                    .font(.subheadline)
+                    .toolbar {
+                        ToolbarItemGroup(placement: .keyboard) {
+                            Spacer()
+                            
+                            Button {
+                                
+                            } label: {
+                                Text("Send")
+                                    .foregroundStyle(!messageText.isEmpty ? .purple : .secondary)
+                                    .fontWeight(.semibold)
+                            }
+                            .padding(.horizontal)
+                        }
+                    }
+                .padding()
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.primary)
+                            .font(.system(size: 20))
+                    }
+                }
+                
+                ToolbarItem(placement: .principal) {
+                    Text("Username")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                }
+            }
+        }
     }
 }
 

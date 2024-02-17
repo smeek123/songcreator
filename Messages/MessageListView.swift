@@ -12,7 +12,11 @@ struct MessageListView: View {
         NavigationStack {
             List {
                 ForEach(0..<35) { notification in
-                    MessageCellView()
+                    NavigationLink(
+                        destination: ConversationView().navigationBarBackButtonHidden(),
+                        label: {
+                            MessageCellView()
+                        })
                         .swipeActions {
                             Button(role: .destructive) {
                                 print("Deleted")

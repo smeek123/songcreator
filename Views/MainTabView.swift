@@ -23,7 +23,7 @@ struct MainTabView: View {
                         }
                     }.tag(0)
                 
-                Text("Messages")
+                MessageListView()
                     .tabItem {
                         if selection == 1 {
                             Image(systemName: "message.fill")

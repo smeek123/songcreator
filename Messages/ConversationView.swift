@@ -30,25 +30,22 @@ struct ConversationView: View {
                     }
                 }
                 
-                TextField("Message...", text: $messageText, axis: .vertical)
-                    .padding(12)
-                    .padding(.trailing, 48)
-                    .textFieldStyle(.roundedBorder)
-                    .font(.subheadline)
-                    .toolbar {
-                        ToolbarItemGroup(placement: .keyboard) {
-                            Spacer()
-                            
-                            Button {
-                                
-                            } label: {
-                                Text("Send")
-                                    .foregroundStyle(!messageText.isEmpty ? .purple : .secondary)
-                                    .fontWeight(.semibold)
-                            }
-                            .padding(.horizontal)
-                        }
+                ZStack(alignment: .trailing) {
+                    TextField("Message...", text: $messageText, axis: .vertical)
+                        .padding(12)
+                        .padding(.trailing, 48)
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .font(.subheadline)
+                        .background(Color(.secondarySystemBackground))
+                    
+                    Button {
+                        
+                    } label: {
+                        Text("Send")
+                            .foregroundStyle(!messageText.isEmpty ? .purple : .secondary)
+                            .fontWeight(.semibold)
                     }
+                }
                 .padding()
             }
             .toolbar {

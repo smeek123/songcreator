@@ -12,19 +12,15 @@ struct FeedCell: View {
     let post: Post
     var player: AVPlayer
     
-    init(post: Post) {
+    init(post: Post, player: AVPlayer) {
         self.post = post
-        if let url = URL(string: post.videoUrl) {
-            self.player = AVPlayer(url: url)
-        }
+        self.player = player
     }
     
     var body: some View {
         ZStack {
-            if let url = URL(string: post.videoUrl) {
-                CustomVideoPlayer(player: AVPlayer(url: url))
-                    .containerRelativeFrame([.horizontal, .vertical])
-            }
+            CustomVideoPlayer(player: player)
+                .containerRelativeFrame([.horizontal, .vertical])
             
             VStack {
                 Spacer()
@@ -96,6 +92,18 @@ struct FeedCell: View {
                 .padding(.bottom, 80)
             }
             .padding()
+        }
+        .onTapGesture {
+            switch player.timeControlStatus {
+            case .paused:
+                player.play()
+            case .waitingToPlayAtSpecifiedRate:
+                break
+            case .playing:
+                player.pause()
+            @unknown default:
+                break
+            }
         }
     }
 }

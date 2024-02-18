@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignInOptionsView: View {
-    //    @StateObject var loginViewModel = LoginViewModel()
+    @StateObject var loginViewModel = LoginViewModel()
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isActive: Bool = false
@@ -93,8 +93,8 @@ struct SignInOptionsView: View {
                 Spacer()
                 
                 NavigationLink {
-                    //                    AddEmailView()
-                    //                        .navigationBarBackButtonHidden()
+                    AddEmailView()
+                        .navigationBarBackButtonHidden()
                 } label: {
                     Text("Don't have an account? Sign up now!")
                         .foregroundStyle(.purple)

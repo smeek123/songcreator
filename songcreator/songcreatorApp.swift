@@ -20,10 +20,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct songcreatorApp: App {
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var register = RegistrationViewModel()
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SignInOptionsView()
+                .environmentObject(register)
         }
     }
 }

@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var register = RegistrationViewModel()
-    
     var body: some View {
         MainTabView()
-            .environmentObject(register)
     }
 }
 

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SignInOptionsView: View {
+    @EnvironmentObject var viewModel: RegistrationViewModel
     @StateObject var loginViewModel = LoginViewModel()
     @State private var email: String = ""
     @State private var password: String = ""

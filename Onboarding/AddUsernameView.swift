@@ -44,13 +44,13 @@ struct AddUsernameView: View {
                     readyToNavigate.toggle()
                 }
             } label: {
-                LargeButtonView(title: "Next", isActive: isActive)
+                LargeButtonView(title: "Complete", isActive: isActive)
             }
             .disabled(!isActive)
             
             Spacer()
             
-            Text("3/4")
+            Text("3/3")
                 .foregroundColor(.secondary)
                 .font(.footnote)
                 .fontWeight(.semibold)
@@ -74,7 +74,6 @@ struct AddUsernameView: View {
     }
 }
 
-
-#Preview {
-    AddUsernameView()
-}
+//#Preview {
+//    AddUsernameView()
+//}

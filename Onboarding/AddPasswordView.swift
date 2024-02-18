@@ -48,7 +48,7 @@ struct AddPasswordView: View {
 
             Spacer()
             
-            Text("2/4")
+            Text("2/3")
                 .foregroundColor(.secondary)
                 .font(.footnote)
                 .fontWeight(.semibold)
@@ -72,8 +72,8 @@ struct AddPasswordView: View {
     }
 }
 
-#Preview {
-    NavigationStack {
-        AddPasswordView()
-    }
-}
+//#Preview {
+//    NavigationStack {
+//        AddPasswordView()
+//    }
+//}

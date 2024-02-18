@@ -58,7 +58,7 @@ struct AddEmailView: View {
             
             Spacer()
             
-            Text("1/4")
+            Text("1/3")
                 .foregroundColor(.secondary)
                 .font(.footnote)
                 .fontWeight(.semibold)
@@ -84,6 +84,6 @@ struct AddEmailView: View {
 
 
 
-#Preview {
-    AddEmailView()
-}
+//#Preview {
+//    AddEmailView()
+//}

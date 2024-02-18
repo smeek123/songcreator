@@ -49,7 +49,7 @@ struct CurrentProfileView: View {
                                         .foregroundStyle(Color(UIColor.secondarySystemBackground))
                                 }
                                 
-                                Image(systemName: "headphones")
+                                Image(systemName: "rectangle.grid.3x2.fill")
                                     .font(.system(size: 22))
                                     .padding(10)
                                     .padding(.horizontal, 10)
@@ -108,7 +108,7 @@ struct CurrentProfileView: View {
                     }
                     .padding()
                     .background(Color(UIColor.secondarySystemBackground))
-                    .clipShape(Capsule())
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
                     .padding()
                     
                     //Posts

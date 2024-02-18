@@ -8,6 +8,13 @@
 import Foundation
 import SwiftUI
 
+extension AnyTransition {
+    static var backslide: AnyTransition {
+        AnyTransition.asymmetric(
+            insertion: .move(edge: .trailing),
+            removal: .move(edge: .leading))}
+}
+
 extension String {
     func generateStringSequence() -> [String] {
         guard self.count > 0 else {

@@ -23,12 +23,12 @@ struct MainTabView: View {
                     }
                 }.tag(0)
             
-            MessageListView()
+            Text("Projects")
                 .tabItem {
                     if selection == 1 {
-                        Image(systemName: "message.fill")
+                        Image(systemName: "folder.fill")
                     } else {
-                        Image(systemName: "message")
+                        Image(systemName: "folder")
                             .environment(\.symbolVariants, .none)
                     }
                 }.tag(1)

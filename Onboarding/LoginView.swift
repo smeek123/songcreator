@@ -11,7 +11,6 @@ struct LoginView: View {
 //    @StateObject var loginViewModel = LoginViewModel()
     @State private var email: String = ""
     @State private var password: String = ""
-    @Environment(\.dismiss) var dismiss
     @State private var isActive: Bool = false
     @State private var readyToNavigate: Bool = false
     
@@ -25,11 +24,6 @@ struct LoginView: View {
     var body: some View {
         VStack(spacing: 25) {
             Spacer()
-            
-            Text("Sign in with email")
-                .foregroundColor(.primary)
-                .font(.title)
-                .multilineTextAlignment(.center)
             
             TextField("Enter your email address", text: $email)
                 .modifier(TextFieldModifier())
@@ -67,7 +61,7 @@ struct LoginView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
-                    dismiss()
+                    
                 } label: {
                     Image(systemName: "chevron.left")
                         .foregroundColor(.primary)

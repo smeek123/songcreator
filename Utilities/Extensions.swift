@@ -97,7 +97,7 @@ struct LargeButtonView: View {
         .frame(width: UIScreen.main.bounds.width * 0.85, height: 35)
         .padding(.horizontal, 15)
         .background(isActive ? .purple : Color(uiColor: .secondarySystemBackground))
-        .clipShape(Capsule())
+        .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
 

@@ -42,6 +42,9 @@ struct AddUsernameView: View {
             Button {
                 if isActive {
                     readyToNavigate.toggle()
+                    Task {
+                        try await viewModel.createUser()
+                    }
                 }
             } label: {
                 LargeButtonView(title: "Complete", isActive: isActive)
@@ -51,7 +54,7 @@ struct AddUsernameView: View {
             Spacer()
             
             Text("3/3")
-                .foregroundColor(.secondary)
+                .foregroundStyle(.secondary)
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .padding(.vertical)
@@ -67,10 +70,10 @@ struct AddUsernameView: View {
                 }
             }
         }
-//        .navigationDestination(isPresented: $readyToNavigate) {
-//            AddStreamingView()
-//                .navigationBarBackButtonHidden()
-//        }
+        //        .navigationDestination(isPresented: $readyToNavigate) {
+        //            AddStreamingView()
+        //                .navigationBarBackButtonHidden()
+        //        }
     }
 }
 

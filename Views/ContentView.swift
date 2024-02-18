@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("signedIn") var isSignedIn: Bool = false
+    @StateObject var viewModel = ContentViewModel()
+    
     var body: some View {
-        MainTabView()
+        Group {
+            if viewModel.userSession == nil {
+                SignInOptionsView()
+            } else if let currentUser = viewModel.currentUser {
+                MainTabView(user: currentUser)
+            }
+        }
     }
 }
 

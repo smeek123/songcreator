@@ -10,8 +10,6 @@ import SwiftUI
 struct SignInOptionsView: View {
     @EnvironmentObject var viewModel: RegistrationViewModel
     @StateObject var loginViewModel = LoginViewModel()
-    @State private var email: String = ""
-    @State private var password: String = ""
     @State private var isActive: Bool = false
     @State private var readyToNavigate: Bool = false
     
@@ -38,12 +36,12 @@ struct SignInOptionsView: View {
                     .font(.headline)
                 
                 VStack(spacing: 25) {
-                    TextField("Enter your email address", text: $email)
+                    TextField("Enter your email address", text: $loginViewModel.email)
                         .modifier(TextFieldModifier())
                         .autocapitalization(.none)
                         .keyboardType(.emailAddress)
                     
-                    SecureField("Enter your password", text: $password)
+                    SecureField("Enter your password", text: $loginViewModel.password)
                         .modifier(TextFieldModifier())
                     
                     Button {
@@ -59,11 +57,11 @@ struct SignInOptionsView: View {
                     }
                     
                     Button {
-                        //                Task {
-                        //                    if !loginViewModel.email.isEmpty && !loginViewModel.password.isEmpty {
-                        //                        try await loginViewModel.signIn()
-                        //                    }
-                        //                }
+                        Task {
+                            if !loginViewModel.email.isEmpty && !loginViewModel.password.isEmpty {
+                                try await loginViewModel.signIn()
+                            }
+                        }
                     } label: {
                         LargeButtonView(title: "Log In", isActive: true)
                         

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainTabView: View {
     @State private var selection: Int = 0
+    let user: User
     
     var body: some View {
         TabView(selection: $selection) {
@@ -62,5 +63,5 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView()
+    MainTabView(user: User(id: "", username: "", email: ""))
 }

@@ -24,7 +24,7 @@ struct songcreatorApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SignInOptionsView()
+            ContentView()
                 .environmentObject(register)
         }
     }

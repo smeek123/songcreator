@@ -28,6 +28,10 @@
 		8D5DC9DE2B826FD2002E3F32 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8D5DC9DD2B826FD2002E3F32 /* FirebaseFirestore */; };
 		8D5DC9E02B826FD2002E3F32 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8D5DC9DF2B826FD2002E3F32 /* FirebaseFirestoreSwift */; };
 		8D5DC9E22B826FD2002E3F32 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8D5DC9E12B826FD2002E3F32 /* FirebaseStorage */; };
+		8D5DC9E42B82734C002E3F32 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5DC9E32B82734C002E3F32 /* ContentViewModel.swift */; };
+		8D5DC9E62B8273D0002E3F32 /* UserAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5DC9E52B8273D0002E3F32 /* UserAuthViewModel.swift */; };
+		8D5DC9E82B827431002E3F32 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5DC9E72B827431002E3F32 /* UserModel.swift */; };
+		8D5DC9EA2B8274B5002E3F32 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5DC9E92B8274B5002E3F32 /* UserService.swift */; };
 		8D64CDCD2B824C29008A0598 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D64CDCC2B824C29008A0598 /* Extensions.swift */; };
 		8D64CDCF2B824E05008A0598 /* SigninOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D64CDCE2B824E05008A0598 /* SigninOptionsView.swift */; };
 		8D64CDD12B8259F8008A0598 /* AddEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D64CDD02B8259F8008A0598 /* AddEmailView.swift */; };
@@ -79,6 +83,10 @@
 		8D58E21B2B4B4C1900BD82CD /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		8D58E21D2B4B4D2100BD82CD /* NotificationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCell.swift; sourceTree = "<group>"; };
 		8D5DC9D02B826DEB002E3F32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8D5DC9E32B82734C002E3F32 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentViewModel.swift; path = Onboarding/ContentViewModel.swift; sourceTree = SOURCE_ROOT; };
+		8D5DC9E52B8273D0002E3F32 /* UserAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserAuthViewModel.swift; path = Onboarding/UserAuthViewModel.swift; sourceTree = SOURCE_ROOT; };
+		8D5DC9E72B827431002E3F32 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = Onboarding/UserModel.swift; sourceTree = SOURCE_ROOT; };
+		8D5DC9E92B8274B5002E3F32 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = Onboarding/UserService.swift; sourceTree = SOURCE_ROOT; };
 		8D64CDCC2B824C29008A0598 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8D64CDCE2B824E05008A0598 /* SigninOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninOptionsView.swift; sourceTree = "<group>"; };
 		8D64CDD02B8259F8008A0598 /* AddEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailView.swift; sourceTree = "<group>"; };
@@ -265,6 +273,9 @@
 			children = (
 				8D64CDD22B825A62008A0598 /* LoginViewModel.swift */,
 				8D64CDD42B825A95008A0598 /* SignupViewModel.swift */,
+				8D5DC9E32B82734C002E3F32 /* ContentViewModel.swift */,
+				8D5DC9E52B8273D0002E3F32 /* UserAuthViewModel.swift */,
+				8D5DC9E92B8274B5002E3F32 /* UserService.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -273,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1152FD2B815849002ADBD6 /* PostModel.swift */,
+				8D5DC9E72B827431002E3F32 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -437,6 +449,7 @@
 				8D1152FE2B815849002ADBD6 /* PostModel.swift in Sources */,
 				8D64CDD12B8259F8008A0598 /* AddEmailView.swift in Sources */,
 				8DACAD2D2B41CE510005112D /* ContentView.swift in Sources */,
+				8D5DC9E62B8273D0002E3F32 /* UserAuthViewModel.swift in Sources */,
 				8D8711DD2B4B14AD0088454F /* ProfileImageView.swift in Sources */,
 				8D58E21C2B4B4C1900BD82CD /* NotificationsView.swift in Sources */,
 				8D58E21E2B4B4D2100BD82CD /* NotificationsCell.swift in Sources */,
@@ -445,12 +458,15 @@
 				8D48DD3F2B4312BC000A38C8 /* CurrentProfileView.swift in Sources */,
 				8D0F8DBA2B810B480037416A /* ConversationView.swift in Sources */,
 				8D0F8DBC2B810BA10037416A /* MessageCellView.swift in Sources */,
+				8D5DC9E42B82734C002E3F32 /* ContentViewModel.swift in Sources */,
+				8D5DC9EA2B8274B5002E3F32 /* UserService.swift in Sources */,
 				8DACAD5C2B41DD6D0005112D /* FeedCell.swift in Sources */,
 				8D48DD432B431474000A38C8 /* PostGridView.swift in Sources */,
 				8D48DD412B43145F000A38C8 /* ProfileHeaderView.swift in Sources */,
 				8D64CDCF2B824E05008A0598 /* SigninOptionsView.swift in Sources */,
 				8D0F8DB82B810B370037416A /* MessageListView.swift in Sources */,
 				8D64CDD92B825B3B008A0598 /* AddUsernameView.swift in Sources */,
+				8D5DC9E82B827431002E3F32 /* UserModel.swift in Sources */,
 				8D64CDCD2B824C29008A0598 /* Extensions.swift in Sources */,
 				8DACAD2B2B41CE510005112D /* songcreatorApp.swift in Sources */,
 				8DACAD592B41D85A0005112D /* MainTabView.swift in Sources */,

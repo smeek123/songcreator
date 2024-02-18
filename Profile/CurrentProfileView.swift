@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct CurrentProfileView: View {
-       @State private var selection: Int = 0
-       @Namespace private var pickerTabs
-          
+    @State var showSignOut: Bool = false
+    @State private var selection: Int = 0
+    @Namespace private var pickerTabs
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -115,6 +116,21 @@ struct CurrentProfileView: View {
                         .padding(.vertical)
                 }
                 .padding(.top)
+                .confirmationDialog("Sign Out?", isPresented: $showSignOut, titleVisibility: .visible) {
+                    //cancels the action
+                    Button(role: .cancel) {
+                        print("canceled")
+                    } label: {
+                        Text("cancel")
+                    }
+                    
+                    //calls the logout method and deletes the access token and account.
+                    Button(role: .destructive) {
+                        UserAuthService.shared.signout()
+                    } label: {
+                        Text("Sign Out")
+                    }
+                }
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
@@ -129,7 +145,7 @@ struct CurrentProfileView: View {
                 
                 ToolbarItem {
                     Button {
-                        
+                        showSignOut.toggle()
                     } label: {
                         Label("Log Out", systemImage: "rectangle.portrait.and.arrow.right")
                     }

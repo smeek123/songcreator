@@ -63,11 +63,9 @@ struct SignInOptionsView: View {
                             }
                         }
                     } label: {
-                        LargeButtonView(title: "Log In", isActive: true)
-                        
-                        //                LargeButtonView(title: "Log In", isActive: !loginViewModel.email.isEmpty && loginViewModel.password.count >= 8)
+                        LargeButtonView(title: "Log In", isActive: !loginViewModel.email.isEmpty && loginViewModel.password.count >= 8)
                     }
-                    //            .disabled(loginViewModel.email.isEmpty || loginViewModel.password.count < 8)
+                    .disabled(loginViewModel.email.isEmpty || loginViewModel.password.count < 8)
                     
                     HStack {
                         Rectangle()

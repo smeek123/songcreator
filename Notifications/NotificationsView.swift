@@ -65,7 +65,6 @@ struct NotificationsView: View {
                 }
                 .frame(maxHeight: 40)
                 .padding()
-                .background(Color(UIColor.secondarySystemBackground))
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 
                 if selection == 0 {

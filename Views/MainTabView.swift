@@ -23,7 +23,7 @@ struct MainTabView: View {
                     }
                 }.tag(0)
             
-            Text("Projects")
+            ProjectsView()
                 .tabItem {
                     if selection == 1 {
                         Image(systemName: "folder.fill")

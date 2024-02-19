@@ -16,7 +16,7 @@ struct ConversationView: View {
             VStack {
                 ScrollView {
                     VStack {
-                        ProfileImageView(size: .xLarge)
+                        ProfileImageView(user: User(id: "", username: "", email: ""), size: .xLarge)
                         
                         VStack(spacing: 4) {
                             Text("username")

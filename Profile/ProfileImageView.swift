@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-//import Kingfisher
+import Kingfisher
 
 enum ProfileImageSize {
     case xSmall
@@ -32,31 +32,32 @@ enum ProfileImageSize {
 }
 
 struct ProfileImageView: View {
+    let user: User
     let size: ProfileImageSize
     
     var body: some View {
-//        if let imageUrl = user.profileImageUrl {
-//            KFImage(URL(string: imageUrl))
-//                .resizable()
-//                .scaledToFill()
-//                .frame(width: size, height: size)
-//                .clipShape(Circle())
-//        } else {
-//            Image(systemName: "person.circle.fill")
-//                .resizable()
-//                .scaledToFill()
-//                .frame(width: size, height: size)
-//                .foregroundColor(.secondary)
-//        }
+        if let imageUrl = user.profileImageUrl {
+            KFImage(URL(string: imageUrl))
+                .resizable()
+                .scaledToFill()
+                .frame(width: size.dimension, height: size.dimension)
+                .clipShape(Circle())
+        } else {
+            Image(systemName: "person.circle.fill")
+                .resizable()
+                .scaledToFill()
+                .frame(width: size.dimension, height: size.dimension)
+                .foregroundColor(.secondary)
+        }
         
-        Image(systemName: "person.circle.fill")
-            .resizable()
-            .scaledToFill()
-            .frame(width: size.dimension, height: size.dimension)
-            .foregroundStyle(.secondary)
+//        Image(systemName: "person.circle.fill")
+//            .resizable()
+//            .scaledToFill()
+//            .frame(width: size.dimension, height: size.dimension)
+//            .foregroundStyle(.secondary)
     }
 }
 
 #Preview {
-    ProfileImageView(size: .xLarge)
+    ProfileImageView(user: User(id: "", username: "", email: ""), size: .xLarge)
 }

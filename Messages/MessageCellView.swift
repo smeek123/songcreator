@@ -10,7 +10,7 @@ import SwiftUI
 struct MessageCellView: View {
     var body: some View {
         HStack {
-            ProfileImageView(size: .small)
+            ProfileImageView(user: User(id: "", username: "", email: ""), size: .small)
             
             HStack {
                 VStack(alignment: .leading) {

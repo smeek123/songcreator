@@ -48,7 +48,7 @@ struct MainTabView: View {
                     }
                 }.tag(3)
             
-            CurrentProfileView()
+            CurrentProfileView(user: user)
                 .tabItem {
                     if selection == 4 {
                         Image(systemName: "person.circle.fill")

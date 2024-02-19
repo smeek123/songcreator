@@ -38,7 +38,7 @@ struct FeedCell: View {
                     Spacer()
                     
                     VStack(spacing: 28) {
-                        ProfileImageView(size: .xSmall)
+                        ProfileImageView(user: User(id: "", username: "", email: ""), size: .xSmall)
                             .padding(.vertical, 0)
                             .overlay {
                                 RoundedRectangle(cornerRadius: 20)

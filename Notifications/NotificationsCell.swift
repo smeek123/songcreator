@@ -10,18 +10,21 @@ import SwiftUI
 struct NotificationsCell: View {
     var body: some View {
         HStack {
-            ProfileImageView(size: .xSmall)
+            ProfileImageView(user: User(id: "", username: "", email: ""), size: .small)
             
             HStack {
                 Text("sean.meek")
                     .font(.footnote)
                     .fontWeight(.semibold) +
-                Text(" liked one of your posts.")
+                Text(" ") +
+                Text("liked one of your posts.")
                     .font(.footnote) +
-                Text(" 3d")
-                    .font (.caption)
+                Text(" ") +
+                Text("3d")
+                    .font(.caption)
                     .foregroundStyle(.gray)
             }
+            .lineLimit(3)
             
             Spacer()
             Rectangle()

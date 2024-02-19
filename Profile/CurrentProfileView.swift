@@ -11,17 +11,20 @@ struct CurrentProfileView: View {
     @State var showSignOut: Bool = false
     @State private var selection: Int = 0
     @Namespace private var pickerTabs
+    @State var currentUser: User? = nil
+    let user: User
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack {
                     //Profile info
-                    ProfileHeaderView()
+                    ProfileHeaderView(user: user)
                     
                     //Actions
                     NavigationLink {
-                        Text("Customize")
+                        EditProfileView(user: user)
+                            .navigationBarBackButtonHidden()
                     } label: {
                         Text("Edit Profile")
                             .fontWeight(.semibold)
@@ -132,7 +135,7 @@ struct CurrentProfileView: View {
                     }
                 }
             }
-            .navigationTitle("Profile")
+            .navigationTitle(user.name ?? "Profile")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem {
@@ -157,5 +160,5 @@ struct CurrentProfileView: View {
 }
 
 #Preview {
-    CurrentProfileView()
+    CurrentProfileView(user: User(id: "", username: "", email: ""))
 }

@@ -60,6 +60,9 @@
 		8DFC0D932B83C51F00DA5F16 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFC0D922B83C51F00DA5F16 /* NotificationModel.swift */; };
 		8DFC0D952B83C81D00DA5F16 /* ChatCellview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFC0D942B83C81D00DA5F16 /* ChatCellview.swift */; };
 		8DFC0D972B83CC7600DA5F16 /* ChatShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFC0D962B83CC7600DA5F16 /* ChatShape.swift */; };
+		8DFC0D992B83D0C100DA5F16 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFC0D982B83D0C100DA5F16 /* MessageModel.swift */; };
+		8DFC0D9B2B83D2A800DA5F16 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFC0D9A2B83D2A800DA5F16 /* MessageService.swift */; };
+		8DFC0D9D2B83D7B400DA5F16 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFC0D9C2B83D7B400DA5F16 /* ChatViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +130,9 @@
 		8DFC0D922B83C51F00DA5F16 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationModel.swift; path = Profile/NotificationModel.swift; sourceTree = SOURCE_ROOT; };
 		8DFC0D942B83C81D00DA5F16 /* ChatCellview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellview.swift; sourceTree = "<group>"; };
 		8DFC0D962B83CC7600DA5F16 /* ChatShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatShape.swift; sourceTree = "<group>"; };
+		8DFC0D982B83D0C100DA5F16 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MessageModel.swift; path = Utilities/MessageModel.swift; sourceTree = SOURCE_ROOT; };
+		8DFC0D9A2B83D2A800DA5F16 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		8DFC0D9C2B83D7B400DA5F16 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatViewModel.swift; path = Messages/ChatViewModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,7 @@
 				8D0F8DB92B810B480037416A /* ConversationView.swift */,
 				8DFC0D942B83C81D00DA5F16 /* ChatCellview.swift */,
 				8D0F8DBB2B810BA10037416A /* MessageCellView.swift */,
+				8DFC0D9A2B83D2A800DA5F16 /* MessageService.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -311,6 +318,7 @@
 				8D5DC9E52B8273D0002E3F32 /* UserAuthViewModel.swift */,
 				8D5DC9E92B8274B5002E3F32 /* UserService.swift */,
 				8DDD0AFD2B83970100763A8C /* EditProfileviewModel.swift */,
+				8DFC0D9C2B83D7B400DA5F16 /* ChatViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -322,6 +330,7 @@
 				8D5DC9E72B827431002E3F32 /* UserModel.swift */,
 				8D77E55D2B82EE9300785E64 /* ProjectModel.swift */,
 				8DFC0D922B83C51F00DA5F16 /* NotificationModel.swift */,
+				8DFC0D982B83D0C100DA5F16 /* MessageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -487,6 +496,7 @@
 				8D77E55C2B82E53300785E64 /* ProjectsView.swift in Sources */,
 				8D64CDD32B825A62008A0598 /* LoginViewModel.swift in Sources */,
 				8D1152FE2B815849002ADBD6 /* PostModel.swift in Sources */,
+				8DFC0D9B2B83D2A800DA5F16 /* MessageService.swift in Sources */,
 				8D64CDD12B8259F8008A0598 /* AddEmailView.swift in Sources */,
 				8DFC0D952B83C81D00DA5F16 /* ChatCellview.swift in Sources */,
 				8DFC0D972B83CC7600DA5F16 /* ChatShape.swift in Sources */,
@@ -501,6 +511,7 @@
 				8D48DD452B4316F2000A38C8 /* UserStatView.swift in Sources */,
 				8D77E55A2B82E52900785E64 /* ProjectCellView.swift in Sources */,
 				8D48DD3F2B4312BC000A38C8 /* CurrentProfileView.swift in Sources */,
+				8DFC0D992B83D0C100DA5F16 /* MessageModel.swift in Sources */,
 				8D0F8DBA2B810B480037416A /* ConversationView.swift in Sources */,
 				8DFC0D932B83C51F00DA5F16 /* NotificationModel.swift in Sources */,
 				8D0F8DBC2B810BA10037416A /* MessageCellView.swift in Sources */,
@@ -519,6 +530,7 @@
 				8DACAD2B2B41CE510005112D /* songcreatorApp.swift in Sources */,
 				8DACAD592B41D85A0005112D /* MainTabView.swift in Sources */,
 				8D1153022B815ED5002ADBD6 /* CustomVideoPlayer.swift in Sources */,
+				8DFC0D9D2B83D7B400DA5F16 /* ChatViewModel.swift in Sources */,
 				8D64CDD72B825AF2008A0598 /* AddPasswordView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,13 @@ import SwiftUI
 
 struct ConversationView: View {
     @Environment(\.dismiss) var dismiss
-    @State private var messageText: String = ""
+    @StateObject var viewModel: ChatViewModel
+    let user: User
+    
+    init(user: User) {
+        self.user = user
+        self._viewModel = StateObject(wrappedValue: ChatViewModel(user: user))
+    }
     
     var body: some View {
         NavigationStack {
@@ -35,7 +41,7 @@ struct ConversationView: View {
                 }
                 
                 ZStack(alignment: .trailing) {
-                    TextField("Message...", text: $messageText, axis: .vertical)
+                    TextField("Message...", text: $viewModel.messageText, axis: .vertical)
                         .padding(12)
                         .padding(.trailing, 48)
                         .clipShape(RoundedRectangle(cornerRadius: 15))
@@ -43,10 +49,11 @@ struct ConversationView: View {
                         .background(Color(.secondarySystemBackground))
                     
                     Button {
-                        
+                        viewModel.sendMessage()
+                        viewModel.messageText = ""
                     } label: {
                         Text("Send")
-                            .foregroundStyle(!messageText.isEmpty ? .purple : .secondary)
+                            .foregroundStyle(!viewModel.messageText.isEmpty ? .purple : .secondary)
                             .fontWeight(.semibold)
                     }
                 }
@@ -74,5 +81,5 @@ struct ConversationView: View {
 }
 
 #Preview {
-    ConversationView()
+    ConversationView(user: User(id: "", username: "", email: ""))
 }

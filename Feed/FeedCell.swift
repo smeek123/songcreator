@@ -61,7 +61,7 @@ struct FeedCell: View {
                         }
                         
                         NavigationLink(
-                            destination: ConversationView().navigationBarBackButtonHidden(),
+                            destination: ConversationView(user: User(id: "", username: "", email: "")).navigationBarBackButtonHidden(),
                             label: {
                                 Image(systemName: "message.fill")
                                     .resizable()

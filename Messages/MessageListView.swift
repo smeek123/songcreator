@@ -13,7 +13,7 @@ struct MessageListView: View {
             List {
                 ForEach(0..<35) { notification in
                     NavigationLink(
-                        destination: ConversationView().navigationBarBackButtonHidden(),
+                        destination: ConversationView(user: User(id: "", username: "", email: "")).navigationBarBackButtonHidden(),
                         label: {
                             MessageCellView()
                         })

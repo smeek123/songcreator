@@ -16,8 +16,16 @@ struct ProjectPromoCellView: View {
 
 struct LargeProjectCellView: View {
     var body: some View {
-        RoundedRectangle(cornerRadius: 20)
-            .frame(width: (UIScreen.main.bounds.width) - 35, height: 230)
+        ZStack(alignment: .bottomLeading) {
+            RoundedRectangle(cornerRadius: 20)
+                .frame(width: (UIScreen.main.bounds.width) - 35, height: 230)
+            
+            Text("Project Title")
+                .foregroundStyle(.black)
+                .font(.title)
+                .fontWeight(.semibold)
+                .padding()
+        }
     }
 }
 

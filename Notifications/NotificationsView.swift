@@ -32,7 +32,7 @@ struct NotificationsView: View {
                                     .foregroundStyle(Color(UIColor.secondarySystemBackground))
                             }
                             
-                            Text("Alerts")
+                            Text("Notifications")
                                 .font(.subheadline)
                                 .fontWeight(.semibold)
                         }

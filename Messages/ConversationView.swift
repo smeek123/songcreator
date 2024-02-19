@@ -28,6 +28,10 @@ struct ConversationView: View {
                                 .foregroundStyle(.purple)
                         }
                     }
+                    
+                    ForEach(0..<15) { _ in
+                        ChatCellview(isFromCurrentUser: Bool.random())
+                    }
                 }
                 
                 ZStack(alignment: .trailing) {

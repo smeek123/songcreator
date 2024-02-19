@@ -57,6 +57,9 @@
 		8DDD0B012B83978500763A8C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8DDD0B002B83978500763A8C /* Kingfisher */; };
 		8DDD0B032B8398C900763A8C /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDD0B022B8398C900763A8C /* ImageUploader.swift */; };
 		8DDD0B052B83993600763A8C /* EditProfileview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDD0B042B83993600763A8C /* EditProfileview.swift */; };
+		8DFC0D932B83C51F00DA5F16 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFC0D922B83C51F00DA5F16 /* NotificationModel.swift */; };
+		8DFC0D952B83C81D00DA5F16 /* ChatCellview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFC0D942B83C81D00DA5F16 /* ChatCellview.swift */; };
+		8DFC0D972B83CC7600DA5F16 /* ChatShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFC0D962B83CC7600DA5F16 /* ChatShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +124,9 @@
 		8DDD0AFD2B83970100763A8C /* EditProfileviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditProfileviewModel.swift; path = Projects/EditProfileviewModel.swift; sourceTree = SOURCE_ROOT; };
 		8DDD0B022B8398C900763A8C /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		8DDD0B042B83993600763A8C /* EditProfileview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileview.swift; sourceTree = "<group>"; };
+		8DFC0D922B83C51F00DA5F16 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationModel.swift; path = Profile/NotificationModel.swift; sourceTree = SOURCE_ROOT; };
+		8DFC0D942B83C81D00DA5F16 /* ChatCellview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellview.swift; sourceTree = "<group>"; };
+		8DFC0D962B83CC7600DA5F16 /* ChatShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +168,7 @@
 			children = (
 				8D0F8DB72B810B370037416A /* MessageListView.swift */,
 				8D0F8DB92B810B480037416A /* ConversationView.swift */,
+				8DFC0D942B83C81D00DA5F16 /* ChatCellview.swift */,
 				8D0F8DBB2B810BA10037416A /* MessageCellView.swift */,
 			);
 			path = Messages;
@@ -206,6 +213,7 @@
 				8D1153012B815ED5002ADBD6 /* CustomVideoPlayer.swift */,
 				8D64CDCC2B824C29008A0598 /* Extensions.swift */,
 				8DDD0B022B8398C900763A8C /* ImageUploader.swift */,
+				8DFC0D962B83CC7600DA5F16 /* ChatShape.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -313,6 +321,7 @@
 				8D1152FD2B815849002ADBD6 /* PostModel.swift */,
 				8D5DC9E72B827431002E3F32 /* UserModel.swift */,
 				8D77E55D2B82EE9300785E64 /* ProjectModel.swift */,
+				8DFC0D922B83C51F00DA5F16 /* NotificationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -479,6 +488,8 @@
 				8D64CDD32B825A62008A0598 /* LoginViewModel.swift in Sources */,
 				8D1152FE2B815849002ADBD6 /* PostModel.swift in Sources */,
 				8D64CDD12B8259F8008A0598 /* AddEmailView.swift in Sources */,
+				8DFC0D952B83C81D00DA5F16 /* ChatCellview.swift in Sources */,
+				8DFC0D972B83CC7600DA5F16 /* ChatShape.swift in Sources */,
 				8DDD0AFE2B83970100763A8C /* EditProfileviewModel.swift in Sources */,
 				8DDD0B052B83993600763A8C /* EditProfileview.swift in Sources */,
 				8DACAD2D2B41CE510005112D /* ContentView.swift in Sources */,
@@ -491,6 +502,7 @@
 				8D77E55A2B82E52900785E64 /* ProjectCellView.swift in Sources */,
 				8D48DD3F2B4312BC000A38C8 /* CurrentProfileView.swift in Sources */,
 				8D0F8DBA2B810B480037416A /* ConversationView.swift in Sources */,
+				8DFC0D932B83C51F00DA5F16 /* NotificationModel.swift in Sources */,
 				8D0F8DBC2B810BA10037416A /* MessageCellView.swift in Sources */,
 				8D5DC9E42B82734C002E3F32 /* ContentViewModel.swift in Sources */,
 				8DDD0B032B8398C900763A8C /* ImageUploader.swift in Sources */,

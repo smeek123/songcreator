@@ -13,7 +13,7 @@ struct ComposeView: View {
     
     var body: some View {
         NavigationStack {
-            List(viewModel.allUsers) { user in
+            List(viewModel.filteredUsers) { user in
                 NavigationLink(value: user) {
                    UserCellView(user: user)
                 }
@@ -33,6 +33,7 @@ struct ComposeView: View {
                     .tint(.indigo)
                 }
             }
+            .searchable(text: $viewModel.searchText, prompt: "Search...")
             .navigationDestination(for: User.self) { user in
                 ConversationView(user: user)
                     .navigationBarBackButtonHidden()

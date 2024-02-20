@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct MessageCellView: View {
+    let user: User
+    
     var body: some View {
         HStack {
-            ProfileImageView(user: User(id: "", username: "", email: ""), size: .small)
+            ProfileImageView(user: user, size: .small)
             
             HStack {
                 VStack(alignment: .leading) {
-                    Text("sean.meek")
+                    Text(user.username)
                         .font(.footnote)
-                        .fontWeight(.semibold)
+                        .bold()
                     Text("Thank you for your input on my new track. I hope to release it soon. Would you be willing to help produce it?")
                         .lineLimit(2)
                         .font(.footnote)
@@ -32,6 +34,6 @@ struct MessageCellView: View {
     }
 }
 
-#Preview {
-    MessageCellView()
-}
+//#Preview {
+//    MessageCellView()
+//}

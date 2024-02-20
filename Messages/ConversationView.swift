@@ -18,63 +18,62 @@ struct ConversationView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                ScrollView {
-                    VStack {
-                        ProfileImageView(user: User(id: "", username: "", email: ""), size: .xLarge)
-                        
-                        VStack(spacing: 4) {
-                            Text("username")
-                                .font(.title3)
-                                .fontWeight(.semibold)
-                            
-                            Text("Message")
-                                .font(.footnote)
-                                .foregroundStyle(.purple)
-                        }
-                    }
+        VStack {
+            ScrollView {
+                VStack {
+                    ProfileImageView(user: user, size: .xLarge)
                     
-                    ForEach(0..<15) { _ in
-                        ChatCellview(isFromCurrentUser: Bool.random())
-                    }
-                }
-                
-                ZStack(alignment: .trailing) {
-                    TextField("Message...", text: $viewModel.messageText, axis: .vertical)
-                        .padding(12)
-                        .padding(.trailing, 48)
-                        .clipShape(RoundedRectangle(cornerRadius: 15))
-                        .font(.subheadline)
-                        .background(Color(.secondarySystemBackground))
-                    
-                    Button {
-                        viewModel.sendMessage()
-                        viewModel.messageText = ""
-                    } label: {
-                        Text("Send")
-                            .foregroundStyle(!viewModel.messageText.isEmpty ? .purple : .secondary)
+                    VStack(spacing: 4) {
+                        Text(user.username)
+                            .font(.title3)
                             .fontWeight(.semibold)
-                    }
-                }
-                .padding()
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(.primary)
-                            .font(.system(size: 20))
+                        
+                        Text("Message")
+                            .font(.footnote)
+                            .foregroundStyle(.purple)
                     }
                 }
                 
-                ToolbarItem(placement: .principal) {
-                    Text("Username")
-                        .font(.title3)
+                ForEach(0..<15) { _ in
+                    ChatCellview(isFromCurrentUser: Bool.random())
+                }
+            }
+            .padding(.top)
+            
+            ZStack(alignment: .trailing) {
+                TextField("Message...", text: $viewModel.messageText, axis: .vertical)
+                    .padding(12)
+                    .padding(.trailing, 48)
+                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                    .font(.subheadline)
+                    .background(Color(.secondarySystemBackground))
+                
+                Button {
+                    viewModel.sendMessage()
+                    viewModel.messageText = ""
+                } label: {
+                    Text("Send")
+                        .foregroundStyle(!viewModel.messageText.isEmpty ? .purple : .secondary)
                         .fontWeight(.semibold)
                 }
+            }
+            .padding()
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.primary)
+                        .font(.system(size: 20))
+                }
+            }
+            
+            ToolbarItem(placement: .principal) {
+                Text(user.name ?? user.username)
+                    .font(.title3)
+                    .fontWeight(.semibold)
             }
         }
     }

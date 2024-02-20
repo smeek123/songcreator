@@ -8,43 +8,45 @@
 import SwiftUI
 
 struct MessageListView: View {
+    @StateObject var viewModel = MessageListViewModel()
+    
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(0..<35) { notification in
-                    NavigationLink(
-                        destination: ConversationView(user: User(id: "", username: "", email: "")).navigationBarBackButtonHidden(),
-                        label: {
-                            MessageCellView()
-                        })
-                        .swipeActions {
-                            Button(role: .destructive) {
-                                print("Deleted")
-                            } label: {
-                                Label("Delete", systemImage: "trash")
-                                    .foregroundStyle(.white)
-                            }
-                            
-                            Button {
-                                print("blocked")
-                            } label: {
-                                Label("Block", systemImage: "person.slash")
-                            }
-                            .tint(.indigo)
-                        }
+        List(viewModel.users) { user in
+            NavigationLink(value: user) {
+                MessageCellView(user: user)
+            }
+            .swipeActions {
+                Button(role: .destructive) {
+                    print("Deleted")
+                } label: {
+                    Label("Delete", systemImage: "trash")
+                        .foregroundStyle(.white)
                 }
+                
+                Button {
+                    print("blocked")
+                } label: {
+                    Label("Block", systemImage: "person.slash")
+                }
+                .tint(.indigo)
             }
-            .refreshable {
-                print("Refreshed")
-            }
-            .padding(.top, 5)
-            .listStyle(.plain)
-            .navigationTitle("Messages")
-            .navigationBarTitleDisplayMode(.inline)
         }
+        .navigationDestination(for: User.self) { user in
+            ConversationView(user: user)
+                .navigationBarBackButtonHidden()
+        }
+        .refreshable {
+            print("Refreshed")
+        }
+        .padding(.top, 5)
+        .listStyle(.plain)
+        .navigationTitle("Messages")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
-    MessageListView()
+    NavigationStack {
+        MessageListView()
+    }
 }

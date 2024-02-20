@@ -34,8 +34,8 @@ struct ConversationView: View {
                     }
                 }
                 
-                ForEach(0..<15) { _ in
-                    ChatCellview(isFromCurrentUser: Bool.random())
+                ForEach(viewModel.messages) { message in
+                    ChatCellview(message: message)
                 }
             }
             .padding(.top)

@@ -8,28 +8,28 @@
 import SwiftUI
 
 struct ChatCellview: View {
-    let isFromCurrentUser: Bool
+    let message: Message
     
     var body: some View {
         HStack {
-            if isFromCurrentUser {
+            if message.isFromCurrentUser {
                 Spacer()
                 
-                Text("TEST MESSAGETEST MESSAGETEST MESSAGETEST MESSAGETEST MESSAGETEST MESSAGETEST")
+                Text(message.messageText)
                     .foregroundStyle(.white)
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .padding()
                     .background(Color(.purple))
-                    .clipShape(ChatShape(isFromCurrentUser: isFromCurrentUser))
+                    .clipShape(ChatShape(isFromCurrentUser: message.isFromCurrentUser))
                     .frame(maxWidth: UIScreen.main.bounds.width / 1.5, alignment: .trailing)
             } else {
-                Text("TEST MESSAGE")
+                Text(message.messageText)
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .padding()
                     .background(Color(uiColor: .quaternaryLabel))
-                    .clipShape(ChatShape(isFromCurrentUser: isFromCurrentUser))
+                    .clipShape(ChatShape(isFromCurrentUser: message.isFromCurrentUser))
                     .frame(maxWidth: UIScreen.main.bounds.width / 1.5, alignment: .leading)
                 
                 Spacer()
@@ -39,6 +39,6 @@ struct ChatCellview: View {
     }
 }
 
-#Preview {
-    ChatCellview(isFromCurrentUser: false)
-}
+//#Preview {
+//    ChatCellview(isFromCurrentUser: false)
+//}

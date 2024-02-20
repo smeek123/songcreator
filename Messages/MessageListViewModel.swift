@@ -25,4 +25,6 @@ class MessageListViewModel: ObservableObject {
         let users = try await UserService.fetchAllUsers()
         self.users = users.filter({ $0.id != currentUid })
     }
+    
+    
 }

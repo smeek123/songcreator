@@ -9,11 +9,15 @@ import SwiftUI
 
 struct MessageListView: View {
     @StateObject var viewModel = MessageListViewModel()
+    @State private var showCompose: Bool = false
     
     var body: some View {
         List(viewModel.users) { user in
             NavigationLink(value: user) {
                 MessageCellView(user: user)
+                    .fullScreenCover(isPresented: $showCompose) {
+                        ComposeView()
+                    }
             }
             .swipeActions {
                 Button(role: .destructive) {
@@ -42,6 +46,15 @@ struct MessageListView: View {
         .listStyle(.plain)
         .navigationTitle("Messages")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem {
+                Button {
+                    showCompose.toggle()
+                } label: {
+                    Label("compose", systemImage: "square.and.pencil")
+                }
+            }
+        }
     }
 }
 

@@ -62,7 +62,7 @@ class UserAuthService {
         
         try? await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
         
-//        try? await Firestore.firestore().collection("users").document(user.id).updateData(["searchTerms": user.searchTerms])
+        try? await Firestore.firestore().collection("users").document(user.id).updateData(["searchTerms": user.searchTerms])
     }
     
     func signout() {

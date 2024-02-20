@@ -22,11 +22,11 @@ struct User: Identifiable, Codable, Hashable {
         }
         return currentUid == id
     }
-//    var searchTerms: [String] {
-//        if let name = self.name {
-//            return [self.username.lowercased().generateStringSequence(), name.lowercased().generateStringSequence()].flatMap {$0}
-//        } else {
-//            return [self.username.lowercased().generateStringSequence()].flatMap {$0}
-//        }
-//    }
+    var searchTerms: [String] {
+        if let name = self.name {
+            return [self.username.lowercased().generateStringSequence(), name.lowercased().generateStringSequence()].flatMap {$0}
+        } else {
+            return [self.username.lowercased().generateStringSequence()].flatMap {$0}
+        }
+    }
 }

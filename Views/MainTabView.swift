@@ -33,7 +33,7 @@ struct MainTabView: View {
                     }
                 }.tag(1)
             
-            Text("Create")
+            CreateView()
                 .tabItem {
                     Image(systemName: "plus.rectangle.fill")
                 }.tag(2)

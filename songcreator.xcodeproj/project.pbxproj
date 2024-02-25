@@ -40,6 +40,9 @@
 		8D64CDD52B825A95008A0598 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D64CDD42B825A95008A0598 /* SignupViewModel.swift */; };
 		8D64CDD72B825AF2008A0598 /* AddPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D64CDD62B825AF2008A0598 /* AddPasswordView.swift */; };
 		8D64CDD92B825B3B008A0598 /* AddUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D64CDD82B825B3B008A0598 /* AddUsernameView.swift */; };
+		8D6F63292B8BE3FD00CCE86A /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F63282B8BE3FD00CCE86A /* CreateView.swift */; };
+		8D6F632B2B8BE7EF00CCE86A /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F632A2B8BE7EF00CCE86A /* CreateViewModel.swift */; };
+		8D6F632D2B8BEE9600CCE86A /* VideoUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F632C2B8BEE9600CCE86A /* VideoUploader.swift */; };
 		8D77E55A2B82E52900785E64 /* ProjectCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77E5592B82E52900785E64 /* ProjectCellView.swift */; };
 		8D77E55C2B82E53300785E64 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77E55B2B82E53300785E64 /* ProjectsView.swift */; };
 		8D77E55E2B82EE9300785E64 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D77E55D2B82EE9300785E64 /* ProjectModel.swift */; };
@@ -112,6 +115,9 @@
 		8D64CDD42B825A95008A0598 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignupViewModel.swift; path = Onboarding/SignupViewModel.swift; sourceTree = SOURCE_ROOT; };
 		8D64CDD62B825AF2008A0598 /* AddPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPasswordView.swift; sourceTree = "<group>"; };
 		8D64CDD82B825B3B008A0598 /* AddUsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUsernameView.swift; sourceTree = "<group>"; };
+		8D6F63282B8BE3FD00CCE86A /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
+		8D6F632A2B8BE7EF00CCE86A /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateViewModel.swift; path = Create/CreateViewModel.swift; sourceTree = SOURCE_ROOT; };
+		8D6F632C2B8BEE9600CCE86A /* VideoUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoUploader.swift; sourceTree = "<group>"; };
 		8D77E5592B82E52900785E64 /* ProjectCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCellView.swift; sourceTree = "<group>"; };
 		8D77E55B2B82E53300785E64 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		8D77E55D2B82EE9300785E64 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProjectModel.swift; path = Projects/ProjectModel.swift; sourceTree = SOURCE_ROOT; };
@@ -231,8 +237,17 @@
 				8D64CDCC2B824C29008A0598 /* Extensions.swift */,
 				8DDD0B022B8398C900763A8C /* ImageUploader.swift */,
 				8DFC0D962B83CC7600DA5F16 /* ChatShape.swift */,
+				8D6F632C2B8BEE9600CCE86A /* VideoUploader.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8D6F63272B8BE3E500CCE86A /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				8D6F63282B8BE3FD00CCE86A /* CreateView.swift */,
+			);
+			path = Create;
 			sourceTree = "<group>";
 		};
 		8D77E5582B82E51900785E64 /* Projects */ = {
@@ -247,6 +262,7 @@
 		8DACAD1E2B41CE510005112D = {
 			isa = PBXGroup;
 			children = (
+				8D6F63272B8BE3E500CCE86A /* Create */,
 				8D77E5582B82E51900785E64 /* Projects */,
 				8D5DC9D02B826DEB002E3F32 /* GoogleService-Info.plist */,
 				8D64CDCB2B824C0D008A0598 /* Utilities */,
@@ -331,6 +347,7 @@
 				8DFC0D9C2B83D7B400DA5F16 /* ChatViewModel.swift */,
 				8D58566B2B83ED4100C41789 /* MessageListViewModel.swift */,
 				8DD7E78B2B85435500B3CE33 /* SearchViewModel.swift */,
+				8D6F632A2B8BE7EF00CCE86A /* CreateViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -512,6 +529,7 @@
 				8D64CDD12B8259F8008A0598 /* AddEmailView.swift in Sources */,
 				8DFC0D952B83C81D00DA5F16 /* ChatCellview.swift in Sources */,
 				8DD7E78A2B8541FD00B3CE33 /* ComposeView.swift in Sources */,
+				8D6F632B2B8BE7EF00CCE86A /* CreateViewModel.swift in Sources */,
 				8D58566C2B83ED4100C41789 /* MessageListViewModel.swift in Sources */,
 				8DFC0D972B83CC7600DA5F16 /* ChatShape.swift in Sources */,
 				8DDD0AFE2B83970100763A8C /* EditProfileviewModel.swift in Sources */,
@@ -535,6 +553,7 @@
 				8D5DC9EA2B8274B5002E3F32 /* UserService.swift in Sources */,
 				8DACAD5C2B41DD6D0005112D /* FeedCell.swift in Sources */,
 				8D48DD432B431474000A38C8 /* PostGridView.swift in Sources */,
+				8D6F632D2B8BEE9600CCE86A /* VideoUploader.swift in Sources */,
 				8D77E55E2B82EE9300785E64 /* ProjectModel.swift in Sources */,
 				8D48DD412B43145F000A38C8 /* ProfileHeaderView.swift in Sources */,
 				8D64CDCF2B824E05008A0598 /* SigninOptionsView.swift in Sources */,
@@ -543,6 +562,7 @@
 				8D5DC9E82B827431002E3F32 /* UserModel.swift in Sources */,
 				8D64CDCD2B824C29008A0598 /* Extensions.swift in Sources */,
 				8DACAD2B2B41CE510005112D /* songcreatorApp.swift in Sources */,
+				8D6F63292B8BE3FD00CCE86A /* CreateView.swift in Sources */,
 				8DACAD592B41D85A0005112D /* MainTabView.swift in Sources */,
 				8D1153022B815ED5002ADBD6 /* CustomVideoPlayer.swift in Sources */,
 				8DFC0D9D2B83D7B400DA5F16 /* ChatViewModel.swift in Sources */,

@@ -11,7 +11,7 @@ import FirebaseStorage
 struct VideoUploader {
     static func uploadVideo(withData videoData: Data) async throws -> String? {
         let filename = NSUUID().uuidString
-        let ref = Storage.storage().reference().child("/videos/\(filename)")
+        let ref = Storage.storage().reference().child("/posts/\(filename)")
         let metadata = StorageMetadata()
         metadata.contentType = "video/quicktime"
         

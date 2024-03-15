@@ -11,6 +11,10 @@ import PhotosUI
 import Firebase
 
 class CreateViewModel: ObservableObject {
+    @Published var isUploading: Bool = false
+    @Published var caption: String = ""
+    @Published var title: String = ""
+    @Published var type: PostType = .demo
     @Published var selectedItem: PhotosPickerItem? {
         didSet {
             Task {
@@ -19,7 +23,9 @@ class CreateViewModel: ObservableObject {
         }
     }
     
+    @MainActor
     func uploadVideo() async throws {
+        isUploading = true
         guard let item = selectedItem else {
             return
         }
@@ -32,5 +38,6 @@ class CreateViewModel: ObservableObject {
         }
         
         try await Firestore.firestore().collection("posts").document().setData(["videoUrl": videoUrl])
+        isUploading = false
     }
 }

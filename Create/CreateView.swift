@@ -18,44 +18,85 @@ struct CreateView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 22) {
-                TextField("Title", text: $title)
-                    .padding()
-                    .frame(width: UIScreen.main.bounds.width * 0.95)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 15)
-                            .stroke(.purple, lineWidth: 2)
-                    }
-                
-                TextField("Caption", text: $caption, axis: .vertical)
-                    .lineLimit(5)
-                    .padding()
-                    .frame(width: UIScreen.main.bounds.width * 0.95)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 15)
-                            .stroke(.purple, lineWidth: 2)
-                    }
-                
-                PhotosPicker(selection: $viewmodel.selectedItem, matching: .videos) {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 25)
-                            .stroke(.purple, lineWidth: 3)
-                            .fill(.black)
-                            .frame(width: UIScreen.main.bounds.width * 0.95, height: 200)
-                        
-                        VStack {
-                            Image(systemName: "plus")
-                            
-                            Text("Choice Video")
-                        }
-                        .font(.footnote)
-                        .bold()
+                if viewmodel.isUploading {
+                    Spacer()
+                    
+                    ProgressView()
+                        .tint(.purple)
+                    
+                    Text("Uploading Video")
                         .foregroundStyle(.purple)
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                    
+                    Spacer()
+                } else {
+                    TextField("Title", text: $title)
+                        .padding()
+                        .frame(width: UIScreen.main.bounds.width * 0.95)
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 15)
+                                .stroke(.purple, lineWidth: 2)
+                        }
+                    
+                    TextField("Caption", text: $caption, axis: .vertical)
+                        .lineLimit(5)
+                        .padding()
+                        .frame(width: UIScreen.main.bounds.width * 0.95)
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 15)
+                                .stroke(.purple, lineWidth: 2)
+                        }
+                    
+                    VStack(spacing: 10) {
+                        Picker(selection: $type) {
+                            ForEach(PostType.allCases, id: \.self) { type in
+                                Text(type.rawValue.capitalized(with: .current))
+                            }
+                        } label: {
+                            Text("What type of post is this?")
+                        }
+                        .pickerStyle(.segmented)
+                        .colorMultiply(.purple)
+                        .frame(width: UIScreen.main.bounds.width * 0.95)
+                        
+                        if type == .demo {
+                            Text("A post labeled demo will show up in the demos section on the feed. These posts are unfinished pieces of songs used to encourage colaboration.")
+                                .font(.footnote)
+                                .fontWeight(.semibold)
+                                .foregroundStyle(.secondary)
+                                .frame(width: UIScreen.main.bounds.width * 0.95)
+                        } else if type == .song {
+                            Text("A post labeled as a song will show up in the songs section on the feed. These posts are finished tracks used to show-off your music.")
+                                .font(.footnote)
+                                .fontWeight(.semibold)
+                                .foregroundStyle(.secondary)
+                                .frame(width: UIScreen.main.bounds.width * 0.95)
+                        }
                     }
+                    
+                    PhotosPicker(selection: $viewmodel.selectedItem, matching: .videos) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 25)
+                                .stroke(.purple, lineWidth: 3)
+                                .fill(.black)
+                                .frame(width: UIScreen.main.bounds.width * 0.95, height: 200)
+                            
+                            VStack {
+                                Image(systemName: "plus")
+                                
+                                Text("Choice Video")
+                            }
+                            .font(.footnote)
+                            .bold()
+                            .foregroundStyle(.purple)
+                        }
+                    }
+                    
+                    Spacer()
                 }
-                
-                Spacer()
             }
             .padding(.top)
             .navigationTitle("Create")

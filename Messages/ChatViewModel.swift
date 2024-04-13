@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class ChatViewModel: ObservableObject {
     @Published var messageText = ""
     @Published var messages = [Message]()

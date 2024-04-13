@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 
+@MainActor
 struct MessageService {
     static let messageCollection = Firestore.firestore().collection("messages")
     
@@ -47,13 +48,9 @@ struct MessageService {
         
         query.addSnapshotListener { snapshot, _ in
             guard let changes = snapshot?.documentChanges.filter({ $0.type == .added }) else { return }
-            var messages = changes.compactMap({ try? $0.document.data(as: Message.self) })
+            let messages = changes.compactMap({ try? $0.document.data(as: Message.self) })
             
             completion(messages)
         }
     }
-    
-//    static func getRecentMessage() async -> Message {
-//        
-//    }
 }

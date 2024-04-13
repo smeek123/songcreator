@@ -6,15 +6,16 @@
 //
 
 import Foundation
+import CoreTransferable
 
 struct Post: Identifiable, Codable {
     let id: String
     let videoUrl: String
-//    let caption: String?
-//    let numLikes: Int
-//    let owner: User
-//    let type: PostType
-//    let title: String?
+    let caption: String?
+    let numLikes: Int
+    let ownerUid: String
+    let type: PostType
+    let title: String?
 }
 
 enum PostType: String, CaseIterable, Codable {

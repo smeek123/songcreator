@@ -10,9 +10,6 @@ import PhotosUI
 import AVKit
 
 struct CreateView: View {
-    @State private var caption: String = ""
-    @State private var title: String = ""
-    @State private var type: PostType = .demo
     @StateObject var viewmodel = CreateViewModel()
     
     var body: some View {
@@ -31,7 +28,7 @@ struct CreateView: View {
                     
                     Spacer()
                 } else {
-                    TextField("Title", text: $title)
+                    TextField("Title", text: $viewmodel.title)
                         .padding()
                         .frame(width: UIScreen.main.bounds.width * 0.95)
                         .clipShape(RoundedRectangle(cornerRadius: 15))
@@ -40,7 +37,7 @@ struct CreateView: View {
                                 .stroke(.purple, lineWidth: 2)
                         }
                     
-                    TextField("Caption", text: $caption, axis: .vertical)
+                    TextField("Caption", text: $viewmodel.caption, axis: .vertical)
                         .lineLimit(5)
                         .padding()
                         .frame(width: UIScreen.main.bounds.width * 0.95)
@@ -51,7 +48,7 @@ struct CreateView: View {
                         }
                     
                     VStack(spacing: 10) {
-                        Picker(selection: $type) {
+                        Picker(selection: $viewmodel.type) {
                             ForEach(PostType.allCases, id: \.self) { type in
                                 Text(type.rawValue.capitalized(with: .current))
                             }
@@ -62,13 +59,13 @@ struct CreateView: View {
                         .colorMultiply(.purple)
                         .frame(width: UIScreen.main.bounds.width * 0.95)
                         
-                        if type == .demo {
+                        if viewmodel.type == .demo {
                             Text("A post labeled demo will show up in the demos section on the feed. These posts are unfinished pieces of songs used to encourage colaboration.")
                                 .font(.footnote)
                                 .fontWeight(.semibold)
                                 .foregroundStyle(.secondary)
                                 .frame(width: UIScreen.main.bounds.width * 0.95)
-                        } else if type == .song {
+                        } else if viewmodel.type == .song {
                             Text("A post labeled as a song will show up in the songs section on the feed. These posts are finished tracks used to show-off your music.")
                                 .font(.footnote)
                                 .fontWeight(.semibold)
@@ -84,7 +81,7 @@ struct CreateView: View {
                                 .fill(.black)
                                 .frame(width: UIScreen.main.bounds.width * 0.95, height: 200)
                             
-                            VStack {
+                            VStack(spacing: 5) {
                                 Image(systemName: "plus")
                                 
                                 Text("Choice Video")
@@ -94,6 +91,9 @@ struct CreateView: View {
                             .foregroundStyle(.purple)
                         }
                     }
+                    .fullScreenCover(isPresented: $viewmodel.showVideo) {
+                        VideoPreview()
+                    }
                     
                     Spacer()
                 }
@@ -101,6 +101,17 @@ struct CreateView: View {
             .padding(.top)
             .navigationTitle("Create")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        if viewmodel.caption.count <= 1000 && viewmodel.title.count <= 50 {
+                            
+                        }
+                    } label: {
+                        Label("Upload Post", systemImage: "checkmark")
+                    }
+                }
+            }
         }
     }
 }

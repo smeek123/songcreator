@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class FeedViewModel: ObservableObject {
     @Published var posts = [Post]()
     
@@ -19,16 +20,16 @@ class FeedViewModel: ObservableObject {
     ]
     
     init() {
-        fetchPosts()
+//        fetchPosts()
     }
     
-    func fetchPosts() {
-        self.posts = [
-            .init(id: NSUUID().uuidString, videoUrl: videoUrls[0]),
-            .init(id: NSUUID().uuidString, videoUrl: videoUrls[1]),
-            .init(id: NSUUID().uuidString, videoUrl: videoUrls[2]),
-            .init(id: NSUUID().uuidString, videoUrl: videoUrls[3]),
-            .init(id: NSUUID().uuidString, videoUrl: videoUrls[4]),
-        ]
-    }
+//    func fetchPosts() {
+//        self.posts = [
+//            .init(id: NSUUID().uuidString, videoUrl: videoUrls[0]),
+//            .init(id: NSUUID().uuidString, videoUrl: videoUrls[1]),
+//            .init(id: NSUUID().uuidString, videoUrl: videoUrls[2]),
+//            .init(id: NSUUID().uuidString, videoUrl: videoUrls[3]),
+//            .init(id: NSUUID().uuidString, videoUrl: videoUrls[4]),
+//        ]
+//    }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class LoginViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
@@ -14,9 +15,7 @@ class LoginViewModel: ObservableObject {
     func signIn() async throws {
         try await UserAuthService.shared.loginWithEmail(with: email, password: password)
         
-        await MainActor.run {
-            email = ""
-            password = ""
-        }
+        email = ""
+        password = ""
     }
 }

@@ -6,13 +6,19 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct VideoPreview: View {
+    @StateObject var viewmodel = CreateViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            CustomVideoPlayer(player: AVPlayer(url: viewmodel.videoURL ?? URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4")!))
+                .containerRelativeFrame([.horizontal, .vertical])
+        }
     }
 }
 
-#Preview {
-    VideoPreview()
-}
+//#Preview {
+//    VideoPreview()
+//}

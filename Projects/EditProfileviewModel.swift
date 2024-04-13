@@ -80,3 +80,4 @@ class EditProfileViewModel: ObservableObject {
         }
     }
 }
+

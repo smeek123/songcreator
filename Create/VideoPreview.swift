@@ -9,12 +9,71 @@ import SwiftUI
 import AVKit
 
 struct VideoPreview: View {
-    @StateObject var viewmodel = CreateViewModel()
+    @Environment(\.dismiss) var dismiss
+    @State private var player = AVPlayer()
+    let url: URL
     
     var body: some View {
         ZStack {
-            CustomVideoPlayer(player: AVPlayer(url: viewmodel.videoURL ?? URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4")!))
+            CustomVideoPlayer(player: player)
                 .containerRelativeFrame([.horizontal, .vertical])
+            
+            VStack {
+                Spacer()
+                
+                HStack {
+                    Spacer()
+                    
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Go Back")
+                            .foregroundStyle(.primary)
+                            .padding()
+                            .padding(.horizontal)
+                            .frame(width: UIScreen.main.bounds.width * 0.45)
+                            .font(.title3)
+                            .bold()
+                            .background(RoundedRectangle(cornerRadius: 20).fill(Color(uiColor: .secondarySystemBackground)))
+                    }
+                    
+                    Spacer()
+                    
+                    Button {
+                        
+                    } label: {
+                        Text("Select")
+                            .foregroundStyle(.primary)
+                            .padding()
+                            .padding(.horizontal)
+                            .frame(width: UIScreen.main.bounds.width * 0.45)
+                            .font(.title3)
+                            .bold()
+                            .background(RoundedRectangle(cornerRadius: 20).fill(.purple))
+                    }
+                    
+                    Spacer()
+                }
+                .padding(.bottom)
+            }
+        }
+        .ignoresSafeArea()
+        .tint(.primary)
+        .onAppear {
+            player.replaceCurrentItem(with: AVPlayerItem(url: url))
+            player.play()
+        }
+        .onTapGesture {
+            switch player.timeControlStatus {
+            case .paused:
+                player.play()
+            case .waitingToPlayAtSpecifiedRate:
+                break
+            case .playing:
+                player.pause()
+            @unknown default:
+                break
+            }
         }
     }
 }

@@ -92,7 +92,9 @@ struct CreateView: View {
                         }
                     }
                     .fullScreenCover(isPresented: $viewmodel.showVideo) {
-                        VideoPreview()
+                        if let videoURL = viewmodel.videoURL {
+                            VideoPreview(url: videoURL)
+                        }
                     }
                     
                     Spacer()

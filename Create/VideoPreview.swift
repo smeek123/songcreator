@@ -9,6 +9,7 @@ import SwiftUI
 import AVKit
 
 struct VideoPreview: View {
+    @StateObject var viewmodel = CreateViewModel()
     @Environment(\.dismiss) var dismiss
     @State private var player = AVPlayer()
     let url: URL
@@ -25,6 +26,8 @@ struct VideoPreview: View {
                     Spacer()
                     
                     Button {
+                        viewmodel.selectedItem = nil
+                        
                         dismiss()
                     } label: {
                         Text("Go Back")
@@ -57,7 +60,7 @@ struct VideoPreview: View {
                 .padding(.bottom)
             }
         }
-        .ignoresSafeArea()
+        .edgesIgnoringSafeArea(.all)
         .tint(.primary)
         .onAppear {
             player.replaceCurrentItem(with: AVPlayerItem(url: url))

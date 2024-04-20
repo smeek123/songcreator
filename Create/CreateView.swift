@@ -10,7 +10,7 @@ import PhotosUI
 import AVKit
 
 struct CreateView: View {
-    @StateObject var viewmodel = CreateViewModel()
+    @StateObject var viewmodel = CreateViewModel() 
     
     var body: some View {
         NavigationStack {
@@ -73,27 +73,50 @@ struct CreateView: View {
                                 .frame(width: UIScreen.main.bounds.width * 0.95)
                         }
                     }
-                    
-                    PhotosPicker(selection: $viewmodel.selectedItem, matching: .videos) {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 25)
-                                .stroke(.purple, lineWidth: 3)
-                                .fill(.black)
-                                .frame(width: UIScreen.main.bounds.width * 0.95, height: 200)
-                            
-                            VStack(spacing: 5) {
-                                Image(systemName: "plus")
-                                
-                                Text("Choice Video")
-                            }
-                            .font(.footnote)
-                            .bold()
-                            .foregroundStyle(.purple)
-                        }
-                    }
                     .fullScreenCover(isPresented: $viewmodel.showVideo) {
                         if let videoURL = viewmodel.videoURL {
                             VideoPreview(url: videoURL)
+                        }
+                    }
+                    
+                    if viewmodel.selectedItem == nil {
+                        PhotosPicker(selection: $viewmodel.selectedItem, matching: .videos) {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 25)
+                                    .stroke(.purple, lineWidth: 3)
+                                    .fill(Color(uiColor: .secondarySystemBackground))
+                                    .frame(width: UIScreen.main.bounds.width * 0.95, height: 200)
+                                
+                                VStack(spacing: 5) {
+                                    Image(systemName: "plus")
+                                    Text("Choice Video")
+                                }
+                                .font(.footnote)
+                                .bold()
+                                .foregroundStyle(.purple)
+                            }
+                        }
+                    } else {
+                        PhotosPicker(selection: $viewmodel.selectedItem, matching: .videos) {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 25)
+                                    .stroke(.purple, lineWidth: 3)
+                                    .fill(Color(uiColor: .secondarySystemBackground))
+                                    .frame(width: UIScreen.main.bounds.width * 0.95, height: 50)
+                                
+                                VStack(spacing: 5) {
+                                    Text("Change Video")
+                                }
+                                .font(.footnote)
+                                .bold()
+                                .foregroundStyle(.purple)
+                            }
+                        }
+                        
+                        if let videoURL = viewmodel.videoURL {
+                            CustomVideoPlayer(player: AVPlayer(url: videoURL))
+                                .padding(.vertical)
+                                .containerRelativeFrame(.horizontal, count: 10, span: 5, spacing: 10)
                         }
                     }
                     
@@ -107,7 +130,7 @@ struct CreateView: View {
                 ToolbarItem {
                     Button {
                         if viewmodel.caption.count <= 1000 && viewmodel.title.count <= 50 {
-                            
+                            print(viewmodel.selectedItem ?? "NIL Video")
                         }
                     } label: {
                         Label("Upload Post", systemImage: "checkmark")

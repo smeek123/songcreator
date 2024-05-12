@@ -43,7 +43,12 @@ struct VideoPreview: View {
                     Spacer()
                     
                     Button {
+                        viewmodel.postURL = viewmodel.videoURL
+                        print(viewmodel.videoURL)
+                        print("post url")
+                        print(viewmodel.postURL)
                         
+                        dismiss()
                     } label: {
                         Text("Select")
                             .foregroundStyle(.primary)

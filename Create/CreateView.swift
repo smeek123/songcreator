@@ -104,16 +104,14 @@ struct CreateView: View {
                                     .fill(Color(uiColor: .secondarySystemBackground))
                                     .frame(width: UIScreen.main.bounds.width * 0.95, height: 50)
                                 
-                                VStack(spacing: 5) {
-                                    Text("Change Video")
-                                }
-                                .font(.footnote)
-                                .bold()
-                                .foregroundStyle(.purple)
+                                Text("Change Video")
+                                    .font(.footnote)
+                                    .bold()
+                                    .foregroundStyle(.purple)
                             }
                         }
                         
-                        if let videoURL = viewmodel.videoURL {
+                        if let videoURL = viewmodel.postURL {
                             CustomVideoPlayer(player: AVPlayer(url: videoURL))
                                 .padding(.vertical)
                                 .containerRelativeFrame(.horizontal, count: 10, span: 5, spacing: 10)

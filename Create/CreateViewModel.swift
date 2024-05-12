@@ -19,6 +19,8 @@ class CreateViewModel: ObservableObject {
     @Published var type: PostType = .demo
     @Published var showVideo: Bool = false
     @Published var videoURL: URL? = nil
+    @Published var postURL: URL? = nil
+    @Published var setPost: Bool = false
     
     @MainActor
     @Published var selectedItem: PhotosPickerItem? {

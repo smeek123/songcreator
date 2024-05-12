@@ -17,7 +17,16 @@ struct ProfileHeaderView: View {
                 
                 Text(user.username)
                     .font(.subheadline)
-                    .fontWeight(.semibold)
+                    .bold()
+                
+                if let bio = user.bio {
+                    Text(bio)
+                        .lineLimit(4)
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                        .multilineTextAlignment(.center)
+                        .frame(width: 300)
+                }
             }
             
             HStack(spacing: 16) {
